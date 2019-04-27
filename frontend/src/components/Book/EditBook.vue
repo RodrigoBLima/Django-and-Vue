@@ -18,13 +18,13 @@
                         <div class="form-group row">
                             <label for="title" class="col-sm-2 col-form-label">Titulo</label>
                             <div class="col-sm-6">
-                              <input type="text" placeholder="Digite o titulo do livro" name="title" class="form-control">
+                              <input type="text" placeholder="Digite o titulo do livro" name="title" class="form-control" v-model.trim="form.title">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="description" class="col-sm-2 col-form-label">Descrição</label>
                             <div class="col-sm-6">
-                              <textarea type="text" rows="3" placeholder="Digite a descrição do livro" name="description" class="form-control"></textarea>
+                              <textarea type="text" rows="3" placeholder="Digite a descrição do livro" name="description" class="form-control" v-model.trim="form.description"></textarea>
                             </div>
                         </div>
                           <div class="rows">
@@ -46,7 +46,47 @@
 </template>
 
 <script>
+import axios from 'axios';
 
+  export default{
+   data() {
+      return {
+        bookId: this.$route.params.bookId,
+        form: {
+          title: '',
+          description: ''
+        }
+      }
+    },
+    methods:{
+
+      onSubmit(evt){
+
+        evt.preventDefault()
+
+      },
+
+      getBook(){
+
+        const path = `http://127.0.0.1:8000/api/v1.0/books/${this.bookId}`
+
+        axios.get(path).then((response) => {
+
+          this.form.title = reponse.data.title
+          this.form.description = response.data.description
+
+        })
+        .catch((error) => {
+          conole.log(error)
+        })
+      }
+
+    },
+    created() {
+      this.getBook()
+    },
+
+  }
 </script>
 
 <style lang="css" scoped>
