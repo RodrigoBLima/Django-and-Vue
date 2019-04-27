@@ -13,7 +13,7 @@
                  <div class="card">
                     <div class="card-body">
 
-                      <form @onSubmit="onSubmit">
+                      <form @submit="onSubmit">
 
                         <div class="form-group row">
                             <label for="title" class="col-sm-2 col-form-label">Titulo</label>
@@ -58,26 +58,39 @@ import axios from 'axios';
         }
       }
     },
-    methods:{
+    methods: {
 
       onSubmit(evt){
 
         evt.preventDefault()
 
+        const path = `http://127.0.0.1:8000/api/v1.0/books/${this.bookId}/`
+
+        axios.put(path, this.form).then((response) => {
+
+          this.form.title = response.data.title
+          this.form.description = response.data.description
+
+          alert("Livro atualizado com sucesso!")
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+
       },
 
       getBook(){
 
-        const path = `http://127.0.0.1:8000/api/v1.0/books/${this.bookId}`
+        const path = `http://127.0.0.1:8000/api/v1.0/books/${this.bookId}/`
 
         axios.get(path).then((response) => {
 
-          this.form.title = reponse.data.title
+          this.form.title = response.data.title
           this.form.description = response.data.description
 
         })
         .catch((error) => {
-          conole.log(error)
+          console.log(error)
         })
       }
 
