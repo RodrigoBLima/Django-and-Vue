@@ -1,10 +1,11 @@
 <template lang="html">
 
+
       <div class="container">
           <div class="row">
               <div class="col text-left">
                   <h2>Lista de livros</h2>
-
+                  <b-button size="sm" variant="primary" :to="{name: 'NewBook'}">Cadastrar novo livro</b-button><br><br>
                   <div class="col-md-12">
                       <b-table striped hover :items="books" :fields="fields">
                           <template slot="action" slot-scope="data">
