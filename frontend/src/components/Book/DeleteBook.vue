@@ -4,19 +4,25 @@
         <div class="row">
           <div class="col">
               <h3>Realmente deseja excluir esse livro?</h3>
-              <p>Titulo : {{ this.element.title }}</p>
-              <p>Descrição : {{ this.element.description }}</p>
 
-              <div class="row">
-                <div class="col">
-                  <b-button v-on:click="deleteBook" variant="danger"> Deletar </b-button>
-                  <b-button type="submit" class="btn-large-space" :to="{name: 'ListBook'}" > Cancelar </b-button>
 
-                </div>
-              </div>
+                 <div class="card">
+                    <div class="card-body">
+
+                            <p>Titulo : {{ this.element.title }}</p>
+                            <p>Descrição : {{ this.element.description }}</p>
+
+                            <div class="row">
+                              <div class="col">
+                                <b-button v-on:click="deleteBook" variant="danger"> Deletar </b-button>
+                                <b-button type="submit" class="btn-large-space" :to="{name: 'ListBook'}" > Cancelar </b-button>
+                              </div>
+                            </div>
+                      </div>
+                  </div>
+            </div>
           </div>
-        </div>
-    </div>
+       </div>
 
 </template>
 <script>
