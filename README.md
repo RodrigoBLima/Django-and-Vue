@@ -19,12 +19,6 @@ What things you need to install the software?
 
 ```
 
-### Project Tree
-
-```
-
-
-```
 
 ### Installing
 
