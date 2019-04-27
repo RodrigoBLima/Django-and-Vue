@@ -11,7 +11,7 @@
                              <b-button size="sm" variant="primary" :to="{name: 'EditBook', params: {bookId: data.item.id } }">
                                 Editar
                              </b-button>
-                              <b-button size="sm" variant="danger">
+                              <b-button size="sm" variant="danger" :to="{name: 'DeleteBook', params: {bookId: data.item.id } }">
                                 Excluir
                              </b-button>
                           </template>

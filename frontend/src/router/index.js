@@ -4,7 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 
 import ListBook from '@/components/Book/ListBook'
 import EditBook from '@/components/Book/EditBook'
-
+import DeleteBook from '@/components/Book/DeleteBook'
 
 Vue.use(Router)
 
@@ -24,6 +24,11 @@ export default new Router({
       path: '/books/:bookId/edit',
       name: 'EditBook',
       component: EditBook
+    },
+    {
+      path: '/books/:bookId/delete',
+      name: 'DeleteBook',
+      component: DeleteBook
     }
   ],
   mode: 'history'
