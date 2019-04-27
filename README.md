@@ -39,7 +39,7 @@ What things you need to install the software?
 
 * Step one 
 
-    At the root of the project 
+    At the root of the project and execute, the command
     ``` source env/bin/activate ```
 
 * Step two
@@ -51,12 +51,12 @@ What things you need to install the software?
     ``` run the command: python3 manage.py runserver  ```    
 * Step four
 
-     view the backend in : [url](http://127.0.0.1:8000/api/v1.0/books/)
+     view the backend in : http://127.0.0.1:8000/api/v1.0/books/
  
 
 * Step five
 
-     ``` cd to file front end and execute: npm run dev```
+     ``` cd to file frontend and execute: npm run dev```
 
 * Step six
 
